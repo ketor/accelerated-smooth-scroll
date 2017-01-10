@@ -20,6 +20,8 @@ let g:ac_smooth_scroll_skip_redraw_line_size = get(g:, 'ac_smooth_scroll_skip_re
 let g:ac_smooth_scroll_min_limit_msec = get(g:, 'ac_smooth_scroll_min_limit_msec', 50)
 let g:ac_smooth_scroll_max_limit_msec = get(g:, 'ac_smooth_scroll_max_limit_msec', 300)
 
+let g:ac_smooth_scroll_step_count = get(g:, 'ac_smooth_scroll_step_count', 8)
+
 if !exists('*AcSmoothScrollCalcStep')
   function! AcSmoothScrollCalcStep(key_count, wlcount)
     if a:key_count > a:wlcount / 2
@@ -47,9 +49,9 @@ endif
 " Interfaces {{{
 
 nnoremap <silent> <Plug>(ac-smooth-scroll-c-d)
-     \ :<C-u>call ac_smooth_scroll#scroll('j', 2, &scroll, g:ac_smooth_scroll_du_sleep_time_msec, 0)<cr>
+     \ :<C-u>call ac_smooth_scroll#scroll('j', 2, g:ac_smooth_scroll_step_count, g:ac_smooth_scroll_du_sleep_time_msec, 0)<cr>
 nnoremap <silent> <Plug>(ac-smooth-scroll-c-u)
-     \ :<C-u>call ac_smooth_scroll#scroll('k', 2, &scroll, g:ac_smooth_scroll_du_sleep_time_msec, 0)<cr>
+     \ :<C-u>call ac_smooth_scroll#scroll('k', 2, g:ac_smooth_scroll_step_count, g:ac_smooth_scroll_du_sleep_time_msec, 0)<cr>
 
 nnoremap <silent> <Plug>(ac-smooth-scroll-c-f)
      \ :<C-u>call ac_smooth_scroll#scroll('j', 1, 0, g:ac_smooth_scroll_fb_sleep_time_msec, 0)<cr>
@@ -57,9 +59,9 @@ nnoremap <silent> <Plug>(ac-smooth-scroll-c-b)
      \ :<C-u>call ac_smooth_scroll#scroll('k', 1, 0, g:ac_smooth_scroll_fb_sleep_time_msec, 0)<cr>
 
 xnoremap <silent> <Plug>(ac-smooth-scroll-c-d_v)
-     \ :<C-u>call ac_smooth_scroll#scroll('j', 2, &scroll, g:ac_smooth_scroll_du_sleep_time_msec, 1)<cr>
+     \ :<C-u>call ac_smooth_scroll#scroll('j', 2, g:ac_smooth_scroll_step_count, g:ac_smooth_scroll_du_sleep_time_msec, 1)<cr>
 xnoremap <silent> <Plug>(ac-smooth-scroll-c-u_v)
-     \ :<C-u>call ac_smooth_scroll#scroll('k', 2, &scroll, g:ac_smooth_scroll_du_sleep_time_msec, 1)<cr>
+     \ :<C-u>call ac_smooth_scroll#scroll('k', 2, g:ac_smooth_scroll_step_count, g:ac_smooth_scroll_du_sleep_time_msec, 1)<cr>
 
 xnoremap <silent> <Plug>(ac-smooth-scroll-c-f_v)
      \ :<C-u>call ac_smooth_scroll#scroll('j', 1, 0, g:ac_smooth_scroll_fb_sleep_time_msec, 1)<cr>

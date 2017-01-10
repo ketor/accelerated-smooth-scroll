@@ -1,11 +1,12 @@
 *accelerated-smooth-scroll.txt*        Vim plugin for accelerated smooth scroll.
 
-Version    : 1.1.0
+Version    : 1.1.1
 Author     : Yonchu <yuyuchu3333@gmail.com>
+Author     : Ketor <d.ketor@gmail.com>
 License    : MITLicense
 Home Page  : http://yonchu.hatenablog.com/entry/2013/05/16/204727
-Repository : https://github.com/yonchu/accelerated-smooth-scroll
-Last Change: 11 Sep 2014.
+Repository : https://github.com/ketor/accelerated-smooth-scroll
+Last Change: 11 Jan 2017.
 
 ==============================================================================
 CONTENTS                                  *accelerated-smooth-scroll-contents*
@@ -140,6 +141,9 @@ g:ac_smooth_scroll_max_limit_msec              *g:ac_smooth_scroll_max_limit_mse
     Maximum time (msec) to detect consecutively scroll.
     (Default: 300)
 
+g:ac_smooth_scroll_step_count              *g:ac_smooth_scroll_step_count
+    Step count for ctrl-u/ctrl-d will scroll
+    (Default: 8)
 ------------------------------------------------------------------------------
 FUNCTIONS                                 *accelerated-smooth-scroll-functions*
 
@@ -160,6 +164,10 @@ AcSmoothScrollCalcSleepTimeMsec(key_count, sleep_time_msec)    *AcSmoothScrollCa
 
 ==============================================================================
 CHANGELOG                                 *accelerated-smooth-scroll-changelog*
+
+1.1.1   2017-01-11
+        - Add g:ac_smooth_scroll_step_count to define steps ctrl-u/ctrl-d will
+          scroll
 
 1.1.0   2014-09-11
         - Disable (and restore after scroll) relative line numbers to improve performance
