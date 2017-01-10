@@ -19,13 +19,13 @@ Or intall with package manager like NeoBundle, Vundle or pathogen.
 [neobundle.vim](https://github.com/Shougo/neobundle.vim)
 
 ```vim
-NeoBundle 'yonchu/accelerated-smooth-scroll'
+NeoBundle 'ketor/accelerated-smooth-scroll'
 ```
 
 [Vundle](https://github.com/gmarik/vundle)
 
 ```vim
-Bundle 'yonchu/accelerated-smooth-scroll'
+Bundle 'ketor/accelerated-smooth-scroll'
 ```
 
 ## See also
